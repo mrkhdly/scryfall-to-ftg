@@ -1,6 +1,6 @@
 # Scryfall → FTG
 
-A Chrome extension that adds a quick search link on Scryfall card pages to find that card on [First Turn Games](https://www.firstturngames.com).
+A Chrome extension that adds a quick search button on Scryfall card pages to find that card on [First Turn Games](https://www.firstturngames.com).
 
 ## How it works
 
