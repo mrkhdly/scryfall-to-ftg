@@ -2,16 +2,15 @@
 
 A Chrome extension that adds a quick search link on Scryfall card pages to find that card on [First Turn Games](https://www.firstturngames.com).
 
-## Screenshots
-
-![Single-faced card](screenshots/single.png)
-![Split card](screenshots/split.png)
-
 ## How it works
 
 When viewing any card on Scryfall (e.g. `scryfall.com/card/...`), a **FTG 🫎** button appears in the card name header. Clicking it opens a First Turn Games product search for that card in a new tab.
 
+![Lotus Cobra card page — FTG button appears in the header and clicking opens a First Turn Games search](screenshots/single.gif)
+
 Split, fuse, and double-faced cards (e.g. `Wear // Tear`) are handled automatically — all face names are joined and searched together.
+
+![Wear // Tear split card — FTG button searches the full joined card name](screenshots/split.gif)
 
 ## Installation
 
