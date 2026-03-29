@@ -1,0 +1,12 @@
+# Chrome extension packaging
+*.zip
+*.crx
+*.pem
+ 
+# VS Code
+.vscode/
+ 
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
