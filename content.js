@@ -2,11 +2,13 @@ function injectButton() {
   // Guard against duplicate injection (Scryfall SPA navigation)
   if (document.querySelector('#ftg-link')) return;
 
-  const cardNameEl = document.querySelector('.card-text-card-name');
-  if (!cardNameEl) return;
+  const cardNameEls = document.querySelectorAll('.card-text-card-name');
+  if (!cardNameEls.length) return;
 
-  // Get the card name text, stripping double-faced card suffix (e.g. "Wear // Tear")
-  const cardName = cardNameEl.textContent.trim().replace(/\s*\/\/.*$/, '');
+  // Join multiple faces with " // " (e.g. "Wear // Tear", "Day // Night")
+  const cardName = Array.from(cardNameEls)
+    .map(el => el.textContent.trim())
+    .join(' // ');
 
   // Create the search link
   const link = document.createElement('a');
@@ -24,8 +26,8 @@ function injectButton() {
     borderRadius: '3px',
   });
 
-  // Find the h1 element and add flexbox styling
-  const h1El = cardNameEl.closest('h1');
+  // Inject into the first h1 only
+  const h1El = cardNameEls[0].closest('h1');
   if (h1El) {
     h1El.style.display = 'flex';
     h1El.style.alignItems = 'center';
