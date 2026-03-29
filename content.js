@@ -33,12 +33,16 @@ function injectButton() {
   }
 }
 
-// Wait for .card-text-card-name to appear in the DOM
-const observer = new MutationObserver(() => {
-  if (document.querySelector('.card-text-card-name')) {
-    observer.disconnect();
-    injectButton();
-  }
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
+// If the element is already in the DOM, inject immediately.
+// Otherwise observe for it to appear (Scryfall renders dynamically).
+if (document.querySelector('.card-text-card-name')) {
+  injectButton();
+} else {
+  const observer = new MutationObserver(() => {
+    if (document.querySelector('.card-text-card-name')) {
+      observer.disconnect();
+      injectButton();
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+}
