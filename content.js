@@ -34,6 +34,7 @@ function injectButton() {
     padding: '2px 6px',
     textDecoration: 'none',
     borderRadius: '3px',
+    fontFamily: 'monospace',
   });
 
   // Inject into the first h1 only
