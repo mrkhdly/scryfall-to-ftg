@@ -1,14 +1,24 @@
+function getCardName() {
+  // Scryfall page titles are always in English, even for alternate-script variants
+  // (e.g. Phyrexian text cards). Format: "Card Name · Scryfall Magic: The Gathering Search"
+  // This also correctly preserves split card names like "Wear // Tear".
+  const titleName = document.title.split('·')[0].trim();
+  if (titleName) return titleName;
+
+  // Fallback: read from DOM (works for normal cards, but breaks on Phyrexian script)
+  const cardNameEls = document.querySelectorAll('.card-text-card-name');
+  return Array.from(cardNameEls)
+    .map(el => el.textContent.trim())
+    .join(' // ');
+}
+
 function injectButton() {
   // Guard against duplicate injection (Scryfall SPA navigation)
   if (document.querySelector('#ftg-link')) return;
 
-  const cardNameEls = document.querySelectorAll('.card-text-card-name');
-  if (!cardNameEls.length) return;
+  if (!document.querySelector('.card-text-card-name')) return;
 
-  // Join multiple faces with " // " (e.g. "Wear // Tear", "Day // Night")
-  const cardName = Array.from(cardNameEls)
-    .map(el => el.textContent.trim())
-    .join(' // ');
+  const cardName = getCardName();
 
   // Create the search link
   const link = document.createElement('a');
@@ -27,6 +37,7 @@ function injectButton() {
   });
 
   // Inject into the first h1 only
+  const cardNameEls = document.querySelectorAll('.card-text-card-name');
   const h1El = cardNameEls[0].closest('h1');
   if (h1El) {
     h1El.style.display = 'flex';
