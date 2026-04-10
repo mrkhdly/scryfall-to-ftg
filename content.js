@@ -13,14 +13,14 @@ function getCardName() {
 }
 
 function injectButton() {
-  // Guard against duplicate injection (Scryfall SPA navigation)
+  // Guard against duplicate injection
   if (document.querySelector('#ftg-link')) return;
 
-  if (!document.querySelector('.card-text-card-name')) return;
+  const cardNameEls = document.querySelectorAll('.card-text-card-name');
+  if (!cardNameEls.length) return;
 
   const cardName = getCardName();
 
-  // Create the search link
   const link = document.createElement('a');
   link.id = 'ftg-link';
   link.href = `https://www.firstturngames.com/products/search?q=${encodeURIComponent(cardName)}`;
@@ -37,26 +37,34 @@ function injectButton() {
     fontFamily: 'monospace',
   });
 
-  // Inject into the first h1 only
-  const cardNameEls = document.querySelectorAll('.card-text-card-name');
   const h1El = cardNameEls[0].closest('h1');
   if (h1El) {
     h1El.style.display = 'flex';
     h1El.style.alignItems = 'center';
     h1El.appendChild(link);
+  } else {
+    // Fallback: open a blank FTG search if the expected DOM structure isn't found
+    window.open('https://www.firstturngames.com/products/search', '_blank', 'noopener,noreferrer');
   }
 }
 
-// If the element is already in the DOM, inject immediately.
-// Otherwise observe for it to appear (Scryfall renders dynamically).
-if (document.querySelector('.card-text-card-name')) {
-  injectButton();
-} else {
-  const observer = new MutationObserver(() => {
-    if (document.querySelector('.card-text-card-name')) {
-      observer.disconnect();
-      injectButton();
-    }
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
-}
+// Keep the observer running to handle Scryfall SPA navigation between cards.
+// On URL change, remove the stale button so injectButton() can re-run cleanly.
+let lastUrl = location.href;
+
+const observer = new MutationObserver(() => {
+  if (location.href !== lastUrl) {
+    lastUrl = location.href;
+    const stale = document.querySelector('#ftg-link');
+    if (stale) stale.remove();
+  }
+
+  if (document.querySelector('.card-text-card-name')) {
+    injectButton();
+  }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Also attempt immediate injection in case content is already rendered
+injectButton();
