@@ -1,4 +1,4 @@
-// Scryfall → FTG v1.1.8 — Adds an FTG search button to Scryfall card pages
+// Scryfall → FTG v1.2.0 — Adds an FTG search button to Scryfall card pages
 // https://github.com/mrkhdly/scryfall-to-ftg
 
 function getCardName() {
