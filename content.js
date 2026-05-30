@@ -68,7 +68,8 @@ const observer = new MutationObserver(() => {
   }
 });
 
-observer.observe(document.body, { childList: true, subtree: true });
+const observeTarget = document.querySelector('main, .card-page, #main') || document.body;
+observer.observe(observeTarget, { childList: true, subtree: true });
 
 // Also attempt immediate injection in case content is already rendered
 injectButton();
