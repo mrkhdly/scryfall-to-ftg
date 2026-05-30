@@ -45,8 +45,8 @@ function injectButton() {
     h1El.style.alignItems = 'center';
     h1El.appendChild(link);
   } else {
-    // Fallback: open a blank FTG search if the expected DOM structure isn't found
-    window.open('https://www.firstturngames.com/products/search', '_blank', 'noopener,noreferrer');
+    // Fallback: inject link after the card name if no h1 wrapper is found
+    cardNameEls[0].parentNode.appendChild(link);
   }
 }
 
