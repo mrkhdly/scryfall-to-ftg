@@ -28,7 +28,7 @@ function injectButton() {
   link.rel = 'noopener noreferrer';
   link.title = 'Search on First Turn Games';
   link.ariaLabel = 'Search on First Turn Games';
-  link.textContent = 'FTG 🫎';
+  link.append('FTG ', Object.assign(document.createElement('span'), { textContent: '🫎', ariaHidden: 'true' }));
   Object.assign(link.style, {
     marginLeft: 'auto',
     backgroundColor: 'black',
