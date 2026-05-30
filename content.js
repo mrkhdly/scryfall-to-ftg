@@ -12,6 +12,8 @@ function getCardName() {
     .join(' // ');
 }
 
+const FTG_SEARCH = 'https://www.firstturngames.com/products/search?q=';
+
 function injectButton() {
   // Guard against duplicate injection
   if (document.querySelector('#ftg-link')) return;
@@ -23,7 +25,7 @@ function injectButton() {
 
   const link = document.createElement('a');
   link.id = 'ftg-link';
-  link.href = `https://www.firstturngames.com/products/search?q=${encodeURIComponent(cardName)}`;
+  link.href = `${FTG_SEARCH}${encodeURIComponent(cardName)}`;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   link.title = 'Search on First Turn Games';
