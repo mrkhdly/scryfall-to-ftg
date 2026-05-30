@@ -1,3 +1,6 @@
+// Scryfall → FTG v1.1.8 — Adds an FTG search button to Scryfall card pages
+// https://github.com/mrkhdly/scryfall-to-ftg
+
 function getCardName() {
   // Scryfall page titles are always in English, even for alternate-script variants
   // (e.g. Phyrexian text cards). Format: "Card Name · Scryfall Magic: The Gathering Search"
