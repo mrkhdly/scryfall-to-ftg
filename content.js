@@ -26,6 +26,8 @@ function injectButton() {
   link.href = `https://www.firstturngames.com/products/search?q=${encodeURIComponent(cardName)}`;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
+  link.title = 'Search on First Turn Games';
+  link.ariaLabel = 'Search on First Turn Games';
   link.textContent = 'FTG 🫎';
   Object.assign(link.style, {
     marginLeft: 'auto',
