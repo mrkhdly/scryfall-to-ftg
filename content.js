@@ -6,7 +6,7 @@ function getCardName() {
   // (e.g. Phyrexian text cards). Format: "Card Name · Scryfall Magic: The Gathering Search"
   // This also correctly preserves split card names like "Wear // Tear".
   const titleName = document.title.split('·')[0].trim();
-  if (titleName) return titleName;
+  if (titleName && /\w/.test(titleName)) return titleName;
 
   // Fallback: read from DOM (works for normal cards, but breaks on Phyrexian script)
   const cardNameEls = document.querySelectorAll('.card-text-card-name');
