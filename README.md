@@ -29,6 +29,26 @@ Split, fuse, and double-faced cards (e.g. `Wear // Tear`) are handled automatica
 3. Enable **Developer mode** (top right)
 4. Click **Load unpacked** and select the repo folder
 
+## Testing
+
+<details>
+<summary>Test URLs</summary>
+
+| Card | URL |
+|------|-----|
+| Single-faced card | `https://scryfall.com/card/lea/1/ancestral-recall` |
+| Split card (Wear // Tear) | `https://scryfall.com/card/dgm/135/wear-tear` |
+| Double-faced card | `https://scryfall.com/card/ori/60a/jace-vryns-prodigy-jace-telepath-unbound` |
+| Phyrexian-script variant | `https://scryfall.com/card/one/93/phyrexian-obliterator` |
+| Apostrophe in name | `https://scryfall.com/card/war/174/tamiyo-collector-of-tales` |
+| Foil/premium printings | `https://scryfall.com/card/tsr/134/rite-of-flame` |
+| Alternate art variant | `https://scryfall.com/card/iko/239/ketria-triome` |
+| Comma in name | `https://scryfall.com/card/bbd/62/najeela-the-blade-blossom` |
+| Hyphen in name | `https://scryfall.com/card/ulg/71/brass-talon-griffin` |
+| Long card name (32 chars) | `https://scryfall.com/card/me1/170/chains-of-mephistopheles` |
+
+</details>
+
 ## Privacy
 
 This extension requests no user data and has no tracking of any kind. It only runs on `scryfall.com/card/*` pages, reads the card name from the page, and constructs a search URL for First Turn Games. No `scripting` permission is required or requested.
