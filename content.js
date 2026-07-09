@@ -66,7 +66,7 @@ const observer = new MutationObserver(() => {
     if (stale) stale.remove();
   }
 
-  if (document.querySelector('.card-text-card-name')) {
+  if (document.querySelector('.card-text-card-name') && !document.querySelector('#ftg-link')) {
     injectButton();
   }
 });
