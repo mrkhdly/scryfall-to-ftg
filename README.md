@@ -36,16 +36,16 @@ Split, fuse, and double-faced cards (e.g. `Wear // Tear`) are handled automatica
 
 | What it tests | Open on Scryfall |
 |------|-----|
-| Single-faced card | [Ancestral Recall](https://scryfall.com/card/lea/1/ancestral-recall) |
+| Single-faced card | [Ancestral Recall](https://scryfall.com/card/lea/47/ancestral-recall) |
 | Split card (Wear // Tear) | [Wear // Tear](https://scryfall.com/card/dgm/135/wear-tear) |
-| Double-faced card | [Jace, Vryn's Prodigy](https://scryfall.com/card/ori/60a/jace-vryns-prodigy-jace-telepath-unbound) |
-| Phyrexian-script variant | [Phyrexian Obliterator](https://scryfall.com/card/one/93/phyrexian-obliterator) |
-| Apostrophe in name | [Tamiyo, Collector of Tales](https://scryfall.com/card/war/174/tamiyo-collector-of-tales) |
-| Foil/premium printings | [Rite of Flame](https://scryfall.com/card/tsr/134/rite-of-flame) |
-| Alternate art variant | [Ketria Triome](https://scryfall.com/card/iko/239/ketria-triome) |
+| Double-faced card | [Jace, Vryn's Prodigy](https://scryfall.com/card/ori/60/jace-vryns-prodigy-jace-telepath-unbound) |
+| Phyrexian-script variant | [Phyrexian Obliterator](https://scryfall.com/card/one/105/phyrexian-obliterator) |
+| Apostrophe in name | [Tamiyo, Collector of Tales](https://scryfall.com/card/war/220/tamiyo-collector-of-tales) |
+| Foil/premium printings | [Rite of Flame](https://scryfall.com/card/csp/96/rite-of-flame) |
+| Alternate art variant | [Ketria Triome](https://scryfall.com/card/iko/250/ketria-triome) |
 | Comma in name | [Najeela, the Blade-Blossom](https://scryfall.com/card/bbd/62/najeela-the-blade-blossom) |
-| Hyphen in name | [Brass-Talon Griffin](https://scryfall.com/card/ulg/71/brass-talon-griffin) |
-| Long card name (32 chars) | [Chains of Mephistopheles](https://scryfall.com/card/me1/170/chains-of-mephistopheles) |
+| Hyphen in name | [Brass-Talon Chimera](https://scryfall.com/card/vis/142/brass-talon-chimera) |
+| Long card name (32 chars) | [Chains of Mephistopheles](https://scryfall.com/card/me1/63/chains-of-mephistopheles) |
 
 </details>
 
